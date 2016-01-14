@@ -1,0 +1,87 @@
+#container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	
+
+}
+canvas {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: 2px;
+	padding: 0;
+	overflow: hidden;
+}
+
+/*COOL TRICK*/
+/*Preload the images to a div with display none, stops the flickering of loading images as they are all loaded at the start*/
+#preload {
+	display: none;
+	background-image: url("../images/glass/smash-1-edit-colour.png"),
+	url("../images/glass/smash-2-edit-colour.png"),
+	url("../images/glass/smash-3-edit-colour.png"),
+	url("../images/colglass-grad.png"),
+	url("../images/futurecity.jpg")
+	url("../images/masks/mask-1-alpha.png"),
+	url("../images/masks/mask-2-alpha.png"),
+	url("../images/masks/mask-3-alpha.png");
+}
+.masked {	
+	-webkit-mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: 0 0;
+	mask-type: alpha;
+}
+
+.hit {
+	animation-name: hitScreen;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes hitScreen {
+	0% {
+		-webkit-transform: translate(-1%,-1%);
+		   -moz-transform: translate(-1%,-1%);
+		    -ms-transform: translate(-1%,-1%);
+		     -o-transform: translate(-1%,-1%);
+		        transform: translate(-1%,-1%);
+		        
+	}
+	25% {
+		-webkit-transform: translate(1%,1%);
+		   -moz-transform: translate(1%,1%);
+		    -ms-transform: translate(1%,1%);
+		     -o-transform: translate(1%,1%);
+		        transform: translate(1%,1%);
+	}
+	50% {
+		-webkit-transform: translate(-1%,1%);
+		   -moz-transform: translate(-1%,1%);
+		    -ms-transform: translate(-1%,1%);
+		     -o-transform: translate(-1%,1%);
+		        transform: translate(-1%,1%);
+	}
+	75% {
+		-webkit-transform: translate(1%,-1%);
+		   -moz-transform: translate(1%,-1%);
+		    -ms-transform: translate(1%,-1%);
+		     -o-transform: translate(1%,-1%);
+		        transform: translate(1%,-1%);
+	}
+	100% {
+		-webkit-transform: translate(0%,0%);
+		   -moz-transform: translate(0%,0%);
+		    -ms-transform: translate(0%,0%);
+		     -o-transform: translate(0%,0%);
+		        transform: translate(0%,0%);
+
+	}
+}
