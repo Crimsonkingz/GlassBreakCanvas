@@ -1,4 +1,4 @@
-#container {
+#container, #canvasContainer {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -9,7 +9,7 @@
 
 }
 canvas {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
 	margin: 2px;
@@ -19,7 +19,7 @@ canvas {
 
 /*COOL TRICK*/
 /*Preload the images to a div with display none, stops the flickering of loading images as they are all loaded at the start*/
-#preload {
+/*#preload {
 	display: none;
 	background-image: url("../images/glass/smash-1-edit-colour.png"),
 	url("../images/glass/smash-2-edit-colour.png"),
@@ -29,21 +29,20 @@ canvas {
 	url("../images/masks/mask-1-alpha.png"),
 	url("../images/masks/mask-2-alpha.png"),
 	url("../images/masks/mask-3-alpha.png");
-}
-.masked {	
+}*/
+/*.masked {	
 	-webkit-mask-size: 100% 100%;
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: 0 0;
 	mask-type: alpha;
-}
+}*/
 
 .hit {
-	animation-name: hitScreen;
-    animation-duration: 0.25s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
+	-webkit-animation: hitScreen 0.5s alternate linear; /* Safari 4+ */
+  	-moz-animation:    hitScreen 0.5s alternate linear; /* Fx 5+ */
+  	-o-animation:      hitScreen 0.5s alternate linear; /* Opera 12+ */
+  	animation:         hitScreen 0.5s alternate linear; /* IE 10+, Fx 29+ */
+
 }
 
 @keyframes hitScreen {
